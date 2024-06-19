@@ -40,12 +40,10 @@ fieldset{
     border: none;
 }
 input[type="radio"],input[type="checkbox"]{
-    width: 18px;
-    height: 18px;
     position: relative;
     appearance: none;
     border: none;
-    border: 1px solid lightgray;
+    border: 2px solid var(--Grey-500-medium);
     transform: scale(50%);
     
 }
