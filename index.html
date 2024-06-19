@@ -13,32 +13,32 @@
 
   <main class="container">
         <h1 class="title">Contact Us</h1>
-        <form action="/" class="form" novalidate autocomplete="off">
+        <form action="/" class="form" autocomplete="off" novalidate>
             <div class="item half">
                 <label for="fname">First Name <span> *</span></label>
-                <input type="text" name="fname" class="input">
+                <input type="text" id="fname" name="fname" class="input">
                 <p class="required">This field is required</p>
             </div>
             <div class="item half">
                 <label for="lname">Last Name <span> *</span></label>
-                <input type="text" name="lname" class="input">
+                <input type="text" id="lname" name="lname" class="input">
                 <p class="required">This field is required</p>
             </div>
             <div class="item">
                 <label for="email">Email Address <span> *</span></label>
-                <input type="email" name="email" class="input">
+                <input type="email" id="email" name="email" class="input" autocomplete="off">
                 <p class="required">This field is required</p>
                 <p class="invalid">Please enter a valid email address</p>
             </div>
             <div class="item">
                 <fieldset class="queries">
                     <legend class="legend">Query Type  <span> *</span></legend>
-                    <label class="query-label half">
-                        <input type="radio" name="query" value="general-enquiry"> 
+                    <label class="query-label half" for="gen">
+                        <input id="gen" type="radio" name="query" value="general-enquiry"> 
                         General Enquiry
                     </label>
-                    <label class="query-label half">
-                        <input type="radio" name="query" value="support-request">
+                    <label class="query-label half" for="sup">
+                        <input id="sup" type="radio" name="query" value="support-request">
                             Support Request
                     </label>
                 </fieldset>
@@ -58,7 +58,7 @@
             </div>
             <div class="item">
                 <label for="submit" hidden>Submit</label>
-                <input type="submit" name="submit" class="submit">
+                <input type="submit" name="submit" id="submit" class="submit">
             </div>
         </form>
   </main>
