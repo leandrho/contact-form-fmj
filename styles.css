@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "Karla";
+    src: url(./assets/fonts/Karla-VariableFont_wght.ttf);
+}
+:root{
+
+    --Green-200-lighter: hsl(148, 38%, 91%);
+    --Green-600-medium: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 54%);
+    --White: hsl(0, 0%, 100%);
+    --Grey-500-medium: hsl(186, 15%, 59%);
+    --Grey-900-darker: hsl(187, 24%, 22%);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Karla', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Green-200-lighter);
+    color: var(--Grey-900-darker);
+}
+label, legend{
+    font-size: 16px;
+}
+label span, legend span{
+    color: var(--Green-600-medium);
+}
+label:has(input[type="radio"]:checked){
+    background-color: var(--Green-200-lighter);
+    border-color: var(--Green-600-medium);
+}
+fieldset{
+    border: none;
+}
+input[type="radio"], input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+    position: relative;
+}  
+
+input[type="checkbox"]:checked::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/images/icon-checkbox-check.svg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+input[type="radio"]:checked::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/images/icon-radio-selected.svg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+input,textarea{
+
+    outline: none;
+    border: none;
+
+    padding: 1rem;
+    
+    border-radius: inherit;
+    border: 1px solid var(--Grey-500-medium);
+
+    font-size: 18px;
+    font-family: 'Karla', sans-serif;
+
+    color: var(--Grey-900-darker);
+}
+input:focus, textarea:focus{
+    border-color: var(--Green-600-medium);
+}
+textarea{
+    resize: none;
+    height: 6.1rem;
+}
+.hidden{
+    display: none;
+}
+.container{
+    width: 736px;
+    background-color: var(--White);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem;
+}
+.title{
+    color: var(--Grey-900-darker);
+    font-size: 2rem;
+    font-weight: 700;
+}
+.form{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 10px;
+}
+.item:has(.error) > input, 
+.item:has(.error) textarea{
+    border: 1px solid var(--Red);
+}
+.half{
+    flex-grow: 1;
+    width: 48%;
+}
+.queries{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.legend{
+    padding: 0.5rem 0;
+}
+.query-label{
+    border-radius: 10px;
+    border: 1px solid var(--Grey-500-medium);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 17px;
+    cursor: pointer;
+}
+.consent-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.consent{
+    cursor: pointer;
+}
+.submit{
+    border: none;
+    background-color: var(--Green-600-medium);
+    color: var(--White);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.submit:active{
+    background-color: hsl(168, 81%, 13%);
+}
+.required, .invalid{
+    display: none;
+    color: var(--Red);
+}
+.error{
+    display: block;
+}
+.toast{
+    background-color: var(--Grey-900-darker);
+    color: var(--White);
+    padding: 2rem;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.toast__title{
+    display: flex;
+    gap: 0.8rem;
+}
+.toast__title h2{
+    font-size: 17px;
+    font-weight: 700;
+}
+.show{
+    display: flex;
+}
+@media screen and (max-width: 530px) {
+    textarea{
+        height: 7.1rem;
+    }
+    input,textarea{
+        font-size: 16px;
+        padding: 0.5rem;
+    }
+    label, legend{
+        font-size: 14px;
+    }
+    .title{
+        font-size: 1.5rem;
+    }
+    .container{
+        gap: 0.5rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .form{
+        gap: 0.8rem;
+    }
+    .item{
+        gap: 5px;
+    }
+    .query-label{
+        font-size: 14px;
+        padding: 0.7rem;
+    }
+    .queries{
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+    .half{
+        width: 100%;
+    }
+    .consent-container label{
+        font-size: 13px;
+    }
+    .toast{
+        width: 90%;
+    }
+}
